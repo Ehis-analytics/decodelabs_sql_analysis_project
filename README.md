@@ -46,100 +46,76 @@ The following SQL concepts were applied during the analysis:
 
 ## Business Questions Answered
 
-### 1. How many orders were recorded?
+### 1. View Sample Records
 
 ```sql
-SELECT COUNT(*) AS Total_Orders
+SELECT * 
+FROM sales_data
+LIMIT 10;
+```
+
+### 2. How many orders were recorded?
+
+```sql
+SELECT COUNT(*) AS total_orders
 FROM sales_data;
 ```
 
-### 2. Which products generated the highest revenue?
+### 3. What quantity of products was sold?
+
+```sql
+SELECT SUM(Quantity) AS TotalQuantitySold
+FROM sales_data;
+```
+
+### 4. What is the average quantity purchased per order?
+
+```sql
+SELECT AVG(Quantity) AS AverageQuantityPerOrder
+FROM sales_data;
+```
+
+### 5. Which transactions involved more than three items?
+
+```sql
+SELECT *
+FROM sales_data
+WHERE Quantity > 3
+LIMIT 15;
+```
+
+### 6. Which products received the highest number of orders?
 
 ```sql
 SELECT Product,
-       SUM(TotalPrice) AS Total_Revenue
+       COUNT(*) AS NumberOfOrders
 FROM sales_data
 GROUP BY Product
-ORDER BY Total_Revenue DESC;
+ORDER BY NumberOfOrders DESC;
 ```
 
-### 3. Which products received the highest number of orders?
+### 7. Which products generated the highest revenue?
 
 ```sql
 SELECT Product,
-       COUNT(OrderID) AS Total_Orders
+       SUM(CAST(REPLACE(REPLACE(TotalPrice,'$',''),',','') AS DECIMAL(10,2))) AS TotalRevenue
 FROM sales_data
 GROUP BY Product
-ORDER BY Total_Orders DESC;
+ORDER BY TotalRevenue DESC;
 ```
 
-### 4. Which payment methods were used most frequently?
+### 8. Which products generated the highest average revenue per order?
 
 ```sql
-SELECT PaymentMethod,
-       COUNT(*) AS Total_Transactions
+SELECT Product,
+       ROUND(
+           SUM(CAST(REPLACE(REPLACE(TotalPrice,'$',''),',','') AS DECIMAL(10,2))) / COUNT(*),
+           2
+       ) AS AvgRevenuePerOrder
 FROM sales_data
-GROUP BY PaymentMethod
-ORDER BY Total_Transactions DESC;
+GROUP BY Product
+ORDER BY AvgRevenuePerOrder DESC;
 ```
-
-### 5. Which coupon codes generated the highest revenue?
-
-```sql
-SELECT CouponCode,
-       SUM(TotalPrice) AS Revenue
-FROM sales_data
-GROUP BY CouponCode
-ORDER BY Revenue DESC;
-```
-
-### 6. Which referral sources generated the most revenue?
-
-```sql
-SELECT ReferralSource,
-       SUM(TotalPrice) AS Revenue
-FROM sales_data
-GROUP BY ReferralSource
-ORDER BY Revenue DESC;
-```
-
-### 7. What was the average transaction value by payment method?
-
-```sql
-SELECT PaymentMethod,
-       AVG(TotalPrice) AS Average_Transaction_Value
-FROM sales_data
-GROUP BY PaymentMethod
-ORDER BY Average_Transaction_Value DESC;
-```
-
-### 8. How were orders distributed across different order statuses?
-
-```sql
-SELECT OrderStatus,
-       COUNT(*) AS Total_Orders
-FROM sales_data
-GROUP BY OrderStatus
-ORDER BY Total_Orders DESC;
-```
-
-## Key Findings
-
-- The dataset contained **1,200 customer transactions**.
-
-- **Chairs generated the highest total revenue**, making them the most valuable product category.
-
-- **Printers recorded the highest number of orders**, indicating strong customer demand.
-
-- **Online Payment was the most frequently used payment method**.
-
-- The **FREESHIP coupon code generated the highest revenue contribution**.
-
-- **Instagram produced the highest referral revenue**, making it the strongest customer acquisition channel.
-
-- **Cancelled orders recorded the highest transaction count** among all order statuses.
-
----
 
 ## Analysis Output
 
