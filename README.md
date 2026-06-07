@@ -121,7 +121,7 @@ ORDER BY AvgRevenuePerOrder DESC;
 
 ### Total Orders Analysis
 
-![Total Orders](screenshots/total_orders.png)
+![Total Orders](Screenshots/total_orders.png)
 
 **Insight:**
 - The dataset contains 1,200 customer transactions.
@@ -130,7 +130,7 @@ ORDER BY AvgRevenuePerOrder DESC;
 
 ### Quantity Sold Analysis
 
-![Quantity Analysis](screenshots/total_quantity_sold.png)
+![Quantity Analysis](Screenshots/total_quantity_sold.png)
 
 **Insight:**
 - A total of 3,550 units were sold across all product categories.
@@ -139,7 +139,7 @@ ORDER BY AvgRevenuePerOrder DESC;
 
 ### Product Orders Analysis
 
-![Product Orders](screenshots/product_orders.png)
+![Product Orders](Screenshots/product_orders.png)
 
 **Insight:**
 - Printers recorded the highest number of orders (181).
@@ -149,7 +149,7 @@ ORDER BY AvgRevenuePerOrder DESC;
 
 ### Revenue Analysis
 
-![Revenue Analysis](screenshots/revenue_analysis.png)
+![Revenue Analysis](Screenshots/revenue_analysis.png)
 
 **Insight:**
 - Chairs generated the highest total revenue.
@@ -159,7 +159,7 @@ ORDER BY AvgRevenuePerOrder DESC;
 
 ### Average Revenue Per Order Analysis
 
-![Average Revenue Per Order](screenshots/average_revenue_per_order.png)
+![Average Revenue Per Order](Screenshots/average_revenue_per_order.png)
 
 **Insight:**
 - Products with higher average revenue per order contributed more value per transaction.
