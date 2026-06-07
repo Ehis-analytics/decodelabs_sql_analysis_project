@@ -167,7 +167,7 @@ ORDER BY AvgRevenuePerOrder DESC;
 
 ---
 
-## Project Files
+## Project File
 
 - [SQL analysis decodelabs](sql_analysis_decodelabs.sql)
 
