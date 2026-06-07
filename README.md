@@ -1,4 +1,4 @@
-# decodelabs_sql_analysis_project
+# Decode Labs Project 3: decodelabs_sql_analysis_project
 ## Project overview
 This project focuses on using SQL to analyze an e-commerce transaction dataset and extract meaningful business insights. The objective was to demonstrate the use of fundamental SQL concepts such as SELECT, WHERE, ORDER BY, GROUP BY, and aggregate functions to answer business questions and support decision-making.
 The analysis was performed using MySQL Workbench.
