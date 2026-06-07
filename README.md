@@ -117,7 +117,91 @@ GROUP BY Product
 ORDER BY AvgRevenuePerOrder DESC;
 ```
 
-## Analysis Output
+## Analysis Outputs
+
+### Total Orders Analysis
+
+![Total Orders](screenshots/total_orders.png)
+
+**Insight:**
+- The dataset contains 1,200 customer transactions.
+
+---
+
+### Quantity Sold Analysis
+
+![Quantity Analysis](screenshots/total_quantity_sold.png)
+
+**Insight:**
+- A total of 3,550 units were sold across all product categories.
+
+---
+
+### Product Orders Analysis
+
+![Product Orders](screenshots/product_orders.png)
+
+**Insight:**
+- Printers recorded the highest number of orders (181).
+- Phones recorded the lowest number of orders (156).
+
+---
+
+### Revenue Analysis
+
+![Revenue Analysis](screenshots/revenue_analysis.png)
+
+**Insight:**
+- Chairs generated the highest total revenue.
+- Printers followed closely behind in revenue contribution.
+
+---
+
+### Average Revenue Per Order Analysis
+
+![Average Revenue Per Order](screenshots/average_revenue_per_order.png)
+
+**Insight:**
+- Products with higher average revenue per order contributed more value per transaction.
+- This metric helps identify premium-performing products.
+
+---
+
+## Project Files
+
+- [SQL Queries](SQL_analysis_decodelabs.sql)
+
+---
+
+## Tools Used
+
+- MySQL Workbench
+- SQL
+- Microsoft Excel
+
+---
+
+## Recommendations
+
+- Increase promotional efforts for high-performing products such as Chairs and Printers.
+
+- Continue leveraging Instagram as a primary marketing channel.
+
+- Optimize and expand the FREESHIP campaign.
+
+- Investigate the causes of Cancelled orders.
+
+- Monitor product-level sales performance regularly.
+
+- Allocate marketing resources based on referral source performance.
+
+---
+
+## Conclusion
+
+This project demonstrates the practical application of SQL for business analysis. By leveraging filtering, sorting, grouping, and aggregation functions, valuable insights were extracted from transactional data to support data-driven decision-making.
+
+The findings highlight how SQL can be used to uncover trends, evaluate business performance, and generate actionable insights from raw transactional data.
 
 
 
